@@ -1,0 +1,27 @@
+\begin{frame}
+\frametitle{\textbf{Implications et Extensions : Corollaire du Théorème de Menger}}
+    \begin{tcolorbox}[colback=orange!10,colframe=orange!100!black,
+        title=\textbf{Corollaire du Théorème de Menger (1927)}]
+        Le corollaire du théorème de Menger traite des cas spécifiques et des extensions du théorème original, offrant une perspective plus large sur la connectivité des graphes.
+
+        \textbf{Formule du Corollaire :}
+        Pour tout graphe \( G \) et deux sommets non adjacents \( u \) et \( v \), le nombre minimum de sommets à supprimer pour que \( u \) et \( v \) soient dans des composantes connexes distinctes est égal au nombre maximum de chemins \( u-v \) indépendants.
+        $$ \kappa'(u,v) = \max \{ \text{nombre de chemins \( u-v \) indépendants} \} $$
+        où \( \kappa'(u,v) \) représente la connectivité dans le contexte du corollaire.
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}
+\frametitle{\textbf{Corollaire du Théorème de Menger : Un Exemple Illustratif}}
+    \begin{tcolorbox}[colback=orange!10,colframe=orange!100!black,
+        title=\textbf{Application du Corollaire}]
+        Prenons un graphe \( G \) avec des sommets \( u \) et \( v \). Supposons que nous avons identifié trois chemins indépendants entre \( u \) et \( v \). Le corollaire du théorème de Menger nous indique que le nombre minimum de sommets à supprimer pour séparer \( u \) de \( v \) est égal à ce nombre de chemins indépendants.
+
+        \textbf{Application du Corollaire :}
+        Si \( u \) et \( v \) sont des nœuds dans un réseau de communication, et qu'il y a trois chemins de communication indépendants entre eux, alors :
+        $$ \kappa'(u,v) = 3 $$
+        Cela signifie que pour interrompre la communication entre \( u \) et \( v \), il faudrait supprimer au moins trois nœuds du réseau.
+    \end{tcolorbox}
+\end{frame}
+
+

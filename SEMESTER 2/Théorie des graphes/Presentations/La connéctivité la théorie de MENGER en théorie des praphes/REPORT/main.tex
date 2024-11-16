@@ -1,0 +1,178 @@
+%%% PLANTILLA DISEÑADA PARA LA REALIZACIÓN DE DOCUMENTO PARA PROYECTOS INTEGRADORES DE LA FUNDACIÓN UNIVERSITARIA CAFAM - UNICAFAM
+
+%% AUTOR DE LA PLANTILLA: PROFESOR MILLER ALEXANDER QUIROGA CAMPOS
+% INGENIERO ELECTRÓNICO & MsC. MATEMÁTICAS APLICADA
+% FACULTADA DE INGENIERÍA, TECNOLOGÍA Y CIENCIAS BÁSICAS
+%\documentclass[12pt, letterpaper]{article}
+
+\documentclass[12pt,a4paper,oneside]{report}
+\usepackage[spanish]{babel}
+\usepackage{blindtext}
+\usepackage[T1]{fontenc}
+\usepackage{times}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{longtable}
+\usepackage[refpages]{gloss}
+\usepackage{float}
+\usepackage{anysize}
+\usepackage{appendix}
+\usepackage{lscape} 
+\usepackage{pdflscape}
+\usepackage{multirow}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{setspace}
+\usepackage{enumerate} 
+\usepackage{upgreek}
+\usepackage{cmll}
+\usepackage{hyperref}
+\usepackage{graphicx} %LaTeX package to import graphics
+\graphicspath{{imagenes/}} %configuring the graphicx package
+
+
+
+
+
+
+\usepackage{float} % Required for the [H] option
+
+
+
+
+\begin{document}
+
+
+
+%----------------------------------------------------------------------------------------
+%	CONFIGURACION
+%----------------------------------------------------------------------------------------
+
+\marginsize{3.0cm}{3.0cm}{4.0cm}{3.0cm}
+\renewcommand*{\contentsname}{Table des Matières}
+\renewcommand*{\listtablename}{Liste des tableaux}
+\renewcommand*{\listfigurename}{Liste des figures}
+\renewcommand{\baselinestretch}{1.0}
+\renewcommand{\appendixname}{Annexes}
+\renewcommand{\appendixtocname}{Annexes}
+\renewcommand{\appendixpagename}{Annexes}
+\renewcommand{\thetable}{\arabic{chapter}.\arabic{table}}
+\renewcommand*{\tablename}{Tableau}
+\renewcommand*{\chaptername}{Chapitre}
+\renewcommand*{\thechapter}{\Roman{chapter}}
+\renewcommand{\thesection}{\arabic{chapter}.\arabic{section}}
+\renewcommand{\figurename}{Figure}
+\renewcommand{\thefigure}{\arabic{chapter}.\arabic{figure}}
+\renewcommand{\theequation}{\arabic{chapter}.\arabic{equation}}
+
+
+%----------------------------------------------------------------------------------------
+%	PORTADA
+%----------------------------------------------------------------------------------------
+
+\begin{titlepage}
+ 
+\begin{center}
+ 
+ {\huge \bf Université Ibn Zohr }\\
+\vspace{1cm}
+{\Large Faculté Polydisciplinaire - Ouarzazate}\\ 
+
+
+
+\begin{center}
+    \includegraphics[width=0.6\textwidth]{Assets/fpo_logo.png}
+\end{center}
+
+\vspace{1cm}
+{\bf \large Module : Théorie des graphes}\\[2.5cm] 
+
+{\bf \large LA CONNÉCTIVITÉ LA THÉORIE DE MENGER EN THÉORIE DES GPRAPHES}\\[1cm]
+
+{\bf \large Master Mathématiques Appliquées pour la Science des Données}\\[0.5cm] 
+
+\vspace{1cm}
+
+\textbf{Élèves :}\\
+\textsc{GAJJA Noureddin}  \\
+\textsc{BOUHLALI Abdelfattah}  %Nom des élèves
+
+\vspace{1cm}
+
+\emph{\textbf{Enseignant :}\\  
+\textsc{Mourad El Ouali} } %Nom de l'enseignant
+
+\vspace{1cm}
+\date{\today}
+{\large OUARZAZATE ,    03-05-2024}\\[0.2cm] 
+\end{center}
+
+\end{titlepage}
+
+\newpage
+\newpage
+%----------------------------------------------------------------------------------------
+%	TABLA DE CONTENIDOS
+%---------------------------------------------------------------------------------------
+
+\tableofcontents
+\cleardoublepage
+\makegloss
+\newpage
+%----------------------------------------------------------------------------------------
+%	INTRODUCTION 
+%----------------------------------------------------------------------------------------
+\input{Sections/Introduction/Introduction}
+
+%----------------------------------------------------------------------------------------
+%	MENGER
+%----------------------------------------------------------------------------------------
+\input{Sections/Menger/Introduction}
+
+%----------------------------------------------------------------------------------------
+%	DISTANCE ET CONNEXITE
+%----------------------------------------------------------------------------------------
+\input{Sections/Distance et Connexite/Introduction}
+
+
+
+
+
+
+
+
+
+%----------------------------------------------------------------------------------------
+%	BIBLIOGRAFIA
+%----------------------------------------------------------------------------------------
+\begin{thebibliography}{9}
+
+\bibitem{menger}
+K. Menger, 
+\textit{Zur allgemeinen Kurventheorie},
+Fund. Math. \textbf{10} (1927), 96--115.
+
+\bibitem{graphtheory}
+R. Diestel, 
+\textit{Graph Theory},
+Graduate Texts in Mathematics, Volume 173, Springer-Verlag, Heidelberg, 5th edition, 2017.
+
+\bibitem{networks}
+M.E.J. Newman, 
+\textit{Networks: An Introduction},
+Oxford University Press, Oxford, 2010.
+
+\bibitem{connectivity}
+S. Even, 
+\textit{Graph Algorithms},
+Computer Science Press, 1979.
+
+\end{thebibliography}
+
+
+
+
+\end{document} 
+

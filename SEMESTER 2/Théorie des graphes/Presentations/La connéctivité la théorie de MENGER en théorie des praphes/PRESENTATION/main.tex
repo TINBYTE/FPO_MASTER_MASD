@@ -1,0 +1,100 @@
+\documentclass[10pt,hyperref={colorlinks,citecolor=blue,urlcolor=peking_blue,linkcolor=}]{beamer}
+\usepackage{Bydevmar}
+\usefonttheme{serif}
+\usepackage{lipsum}
+%\usepackage[scheme = plain]{ctex}
+\usepackage{hyperref}
+\usepackage{charter} % Nicer fonts
+% other packages
+\usepackage{latexsym,amsmath,xcolor,multicol,booktabs,calligra}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{bm}
+\usepackage{natbib}
+\usepackage{wrapfig}
+\usepackage{amsfonts} 
+\usepackage{ragged2e}
+\usepackage{parskip}
+
+\apptocmd{\frame}{}{\justifying}{} % Allow optional arguments after frame.
+
+\newcommand{\theHalgorithm}{\arabic{algorithm}}
+\theoremstyle{plain}
+\newtheorem{axiom}{Axiom}
+\newtheorem{claim}[axiom]{Claim}
+\newtheorem{assumption}{Assumption}
+\newtheorem{remark}{Remark}
+\newtheorem{proposition}{Proposition}
+\setbeamertemplate{theorems}[numbered] 
+
+
+% change for your title page information
+\author[FPO]{Faculté Polydisciplinaire - Ouarzazate}
+\title{LA CONNÉCTIVITÉ LA THÉORIE DE MENGER EN THÉORIE DES GPRAPHES}
+\subtitle{Module : Théorie des graphes}
+\institute{Master Mathématiques Appliquées pour la Science des Données}
+\date{
+2024/05/04}
+
+\newif\ifplacelogo % create a new conditional
+\placelogotrue % set it to true
+\logo{
+\ifplacelogo
+\includegraphics[width=2cm]{../Figures/PKU-China-logo.png}
+\fi
+}
+% official colors match with the PKU red
+\def\cmd#1{\texttt{\color{red}\footnotesize $\backslash$#1}}
+\def\env#1{\texttt{\color{blue}\footnotesize #1}}
+\definecolor{deepblue}{rgb}{0,0,0.5}
+\definecolor{deepred}{rgb}{0.6,0,0}
+\definecolor{deepgreen}{rgb}{0,0.5,0}
+\definecolor{halfgray}{gray}{0.55}
+
+
+\usepackage{tcolorbox}
+
+% Définition de la couleur orange
+\definecolor{orange}{RGB}{255,140,0}
+\begin{document}
+{
+\setbeamertemplate{logo}{}
+\begin{frame}
+    \titlepage
+    \begin{figure}[htpb]
+        \begin{center}
+            \includegraphics[width=0.7\linewidth]{Figures/fpo_logo.png}
+        \end{center}
+    \end{figure}
+\end{frame}
+}
+
+\placelogofalse
+
+%%%%%%%%%%%
+% Concepts Introductifs
+%%%%%%%%%%%
+\input{Frames/Concepts Introductifs/Introduction}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%
+% Theoreme De Menger
+%%%%%%%%%%%
+\input{Frames/Thoreme de Menger/Introduction}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%
+% Distance et Connexite
+%%%%%%%%%%%
+\input{Frames/Distance et Connexite/Introduction}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%
+% Distance et Connexite
+%%%%%%%%%%%
+\input{Frames/Conclusion/Conclusion}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}

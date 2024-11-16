@@ -1,0 +1,22 @@
+\newpage
+\section{Le Théorème de Menger et Son Rôle Clé dans la Connectivité des Graphes}
+
+Le théorème de Menger est un pilier de la théorie des graphes, offrant un éclairage précieux sur la notion de connectivité. Ce théorème établit un lien direct entre la connectivité de deux sommets non adjacents dans un graphe et le nombre de chemins indépendants les reliant.
+
+\subsection{Énoncé du Théorème de Menger}
+Le théorème de Menger affirme que pour deux sommets non adjacents \( u \) et \( v \) dans un graphe non orienté, le nombre minimum de sommets à retirer pour séparer \( u \) de \( v \) est égal au nombre maximum de chemins indépendants reliant \( u \) à \( v \). Formellement, si \( \kappa(u, v) \) désigne la connectivité locale entre \( u \) et \( v \), et \( \lambda(u, v) \) le nombre de chemins indépendants, alors \( \kappa(u, v) = \lambda(u, v) \).
+
+\subsection{Importance et Applications}
+La portée du théorème de Menger transcende la théorie mathématique pour influencer de manière significative des domaines pratiques variés :
+\begin{itemize}
+    \item \textbf{Informatique} : Dans les réseaux de communication, le théorème guide le routage de paquets et la conception de réseaux résilients aux pannes.
+    \item \textbf{Génie Civil} : Il informe la planification de réseaux de transport, assurant la continuité des routes malgré les interruptions.
+    \item \textbf{Biologie} : La modélisation des réseaux métaboliques s'appuie sur ce théorème pour comprendre la redondance des voies métaboliques.
+\end{itemize}
+
+\subsection{Exemples Illustratifs}
+\textit{Exemple 1 : Considérons un réseau de communication où chaque sommet représente un routeur. Le théorème de Menger peut être utilisé pour déterminer le nombre minimal de routeurs à sécuriser pour éviter une déconnexion complète en cas de défaillance.}
+
+\textit{Exemple 2 : Dans la conception d'un réseau routier, le théorème aide à identifier les points critiques dont la défaillance pourrait isoler des parties du réseau, permettant ainsi de prioriser les infrastructures à renforcer.}
+
+Le théorème de Menger est donc essentiel pour évaluer la robustesse des graphes et optimiser leur conception face aux défis de la connectivité.

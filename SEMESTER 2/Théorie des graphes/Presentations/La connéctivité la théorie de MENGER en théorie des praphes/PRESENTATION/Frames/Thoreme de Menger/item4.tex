@@ -1,0 +1,28 @@
+\begin{frame}
+\frametitle{Exploration de la Connectivité des Graphes : Théorème de Menger}
+\begin{tcolorbox}[colback=orange!10,colframe=orange!100!black,
+    title=\textbf{Théorème de Menger}]
+    Le théorème de Menger est un résultat fondamental en théorie des graphes qui établit une relation entre la connectivité locale et globale d'un graphe. Il stipule que pour deux sommets non adjacents \( u \) et \( v \) dans un graphe, le nombre minimum de sommets à supprimer pour séparer \( u \) et \( v \) est égal au nombre maximum de chemins indépendants de \( u \) à \( v \).
+    
+    Formellement, la formule mathématique est donnée par :
+    $$ \kappa(u,v) = \max \{ \text{nombre de chemins indépendants de } u \text{ à } v \} $$
+    où \( \kappa(u,v) \) représente la connectivité entre les sommets \( u \) et \( v \).
+\end{tcolorbox}
+\end{frame}
+
+\begin{frame}
+\frametitle{Application Pratique : Théorème de Menger}
+\begin{tcolorbox}[colback=orange!10,colframe=orange!100!black,
+    title=\textbf{Exemple du Théorème de Menger}]
+    Considérons un graphe où les sommets \( A \) et \( B \) ne sont pas adjacents. Selon le théorème de Menger, pour déterminer le nombre minimum de sommets à supprimer pour séparer \( A \) de \( B \), nous devons trouver le nombre maximum de chemins indépendants de \( A \) à \( B \).
+
+    Supposons qu'il y ait trois chemins indépendants entre \( A \) et \( B \). Alors, selon le théorème de Menger, nous devons supprimer au moins trois sommets pour séparer \( A \) de \( B \).
+
+    La formule mathématique s'applique comme suit :
+    $$ \kappa(A,B) = 3 $$
+    Ce qui signifie que la connectivité \( \kappa \) entre \( A \) et \( B \) est de trois, et donc trois est le nombre minimum de sommets à supprimer pour les séparer.
+\end{tcolorbox}
+\end{frame}
+
+
+

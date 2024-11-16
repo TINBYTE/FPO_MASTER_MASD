@@ -1,0 +1,24 @@
+% Première diapositive : Définition et Explication
+\begin{frame}
+\frametitle{Théorème de Menger : Définition et Implications}
+    \begin{tcolorbox}[colback=orange!10,colframe=orange!100!black,
+        title=Théorème de Menger]
+        Le théorème de Menger est un pilier de la théorie des graphes qui fournit une caractérisation fondamentale de la connectivité en termes de chemins indépendants. Il stipule que :
+        \begin{itemize}
+            \item Pour deux sommets non adjacents \( u \) et \( v \) dans un graphe \( G \), le nombre minimum de sommets à enlever pour séparer \( u \) de \( v \) est égal au nombre maximum de chemins indépendants de \( u \) à \( v \).
+            \item Ce nombre est appelé la \textbf{connectivité locale} de \( u \) et \( v \), notée \( \kappa(u,v) \).
+        \end{itemize}
+        Formellement, le théorème s'exprime par la relation suivante :
+        $$ \kappa(u,v) = \max \{ \text{nombre de chemins indépendants de } u \text{ à } v \} $$
+    \end{tcolorbox}
+\end{frame}
+
+% Deuxième diapositive : Exemple d'Application
+\begin{frame}
+\frametitle{Théorème de Menger : Exemple d'Application}
+    \begin{tcolorbox}[colback=orange!10,colframe=orange!100!black,
+        title=Application Pratique du Théorème de Menger]
+        \textbf{Exemple d'Application :}
+        Dans les réseaux informatiques, le théorème de Menger peut être utilisé pour déterminer le nombre de liaisons redondantes nécessaires pour maintenir la connectivité entre deux centres de données après des pannes éventuelles. Cette approche permet de garantir la fiabilité et la résilience des infrastructures critiques.
+    \end{tcolorbox}
+\end{frame}

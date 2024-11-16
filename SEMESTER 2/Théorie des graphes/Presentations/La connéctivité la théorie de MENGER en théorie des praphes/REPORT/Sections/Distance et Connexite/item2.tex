@@ -1,0 +1,42 @@
+\section{Connectivité dans les Graphes : Variétés, Implications et Exemples}
+
+La connectivité d'un graphe est une caractéristique fondamentale qui décrit la capacité de relier les sommets par des chemins. Cette section détaille les différentes formes de connectivité, leurs implications dans la structure globale d'un graphe, et fournit des exemples simples pour une meilleure compréhension.
+
+\subsection{Graphe Connecté}
+Un graphe non orienté est dit connecté si, pour toute paire de sommets \( (x, y) \), il existe un chemin les reliant. Cette propriété garantit l'accessibilité entre tous les sommets du graphe.
+\textit{Exemple : Un graphe en forme de cercle où chaque sommet est relié à deux autres sommets forme un graphe connecté.}
+
+\subsection{Graphe Fortement Connecté}
+Un graphe orienté est fortement connecté si, pour toute paire de sommets \( (x, y) \), il existe un chemin orienté de \( x \) à \( y \) et un chemin orienté de \( y \) à \( x \). Cette forme de connectivité assure une interdépendance totale entre les sommets.
+\textit{Exemple : Un graphe en forme de flèche où chaque sommet a des arêtes entrantes et sortantes vers chaque autre sommet forme un graphe fortement connecté.}
+
+\subsection{Graphe Faiblement Connecté}
+Un graphe orienté est faiblement connecté si, en ignorant l'orientation des arêtes, le graphe devient connecté. Cela indique que le graphe conserve une intégrité structurelle même sans considérer la direction des connexions.
+\textit{Exemple : Un graphe orienté où tous les sommets peuvent être reliés en ignorant la direction des arêtes est un graphe faiblement connecté.}
+
+\subsection{Composantes Connexes}
+Une composante connexe est un sous-ensemble maximal de sommets tel que chaque paire de sommets dans la composante est reliée par un chemin, et aucun sommet supplémentaire en dehors de la composante ne peut être ajouté sans perdre cette propriété de connectivité.
+\textit{Exemple : Dans un graphe avec plusieurs groupes isolés de sommets, chaque groupe forme une composante connexe.}
+
+\subsubsection{2.1. Définition}
+Un graphe non vide \( G \) est connecté si, pour toute paire de sommets \( (x, y) \), il existe un chemin \( P_{xy} \) dans \( G \) reliant \( x \) à \( y \).
+
+\subsubsection{2.2. Proposition}
+Pour un graphe connecté \( G \), il existe une séquence de sommets \( (v_1, \ldots, v_n) \) telle que le sous-graphe induit par \( (v_1, \ldots, v_i) \) est connecté pour tout \( i \) dans \( 1 \leq i \leq n \).
+
+\subsubsection{2.3. Définition}
+Une composante connexe \( X \) d'un graphe est un sous-graphe induit maximal connexe. 'Maximal' signifie qu'aucun sommet extérieur à \( X \) ne peut être ajouté sans perdre la propriété de connectivité.
+
+\subsubsection{2.4. Proposition}
+Les composantes connexes \( X_1, \ldots, X_k \) d'un graphe \( G \) forment une partition \( k \)-partite de \( G \), c'est-à-dire que chaque sommet de \( G \) appartient à une seule composante connexe.
+
+\subsubsection{2.5. Définition}
+Un graphe \( G \) est \( k \)-connexe (pour \( k \geq 2 \)) si le graphe reste connecté après la suppression de n'importe quel ensemble de \( k - 1 \) sommets.
+\textit{Exemple : Un graphe en forme de grille où la suppression de n'importe quel sommet ne déconnecte pas le graphe est un graphe \( k \)-connexe.}
+
+\subsubsection{2.6. Corollaire}
+Si un graphe \( G \) est \( k \)-connexe, alors il est également \( k_0 \)-connexe pour tout \( k_0 \) tel que \( 2 \leq k_0 \leq k \).
+
+\subsubsection{2.7. Définition}
+La connectivité \( \kappa(G) \) d'un graphe \( G \) est le plus grand entier \( k \) tel que \( G \) est \( k \)-connexe. Elle mesure la robustesse du graphe face à la suppression de sommets.
+\textit{Exemple : Un graphe où la suppression de jusqu'à deux sommets ne le déconnecte pas a une connectivité \( \kappa(G) \) de 2.}

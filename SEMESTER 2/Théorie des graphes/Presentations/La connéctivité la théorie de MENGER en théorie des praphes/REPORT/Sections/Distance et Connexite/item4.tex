@@ -1,0 +1,18 @@
+\section{Exploitation du Théorème de Menger pour la Résolution des Problématiques de Connectivité}
+
+Considérons un graphe non orienté \( G \) et deux sommets distincts \( u \) et \( v \) au sein de ce graphe. Le théorème de Menger nous offre un outil puissant pour évaluer la connectivité entre ces deux points. Selon ce théorème, la connectivité entre \( u \) et \( v \) est caractérisée par la correspondance entre deux quantités clés :
+
+\begin{itemize}
+    \item La taille minimale d'un ensemble de sommets dont l'élimination entraîne la perte de connectivité entre \( u \) et \( v \).
+    \item Le nombre maximal de chemins indépendants qui relient \( u \) à \( v \) sans partager de sommets communs.
+\end{itemize}
+
+En termes mathématiques, cette relation est exprimée par l'équation suivante :
+$$
+\min \{ |S| : S \subseteq V(G), G - S \text{ ne contient pas de chemin entre } u \text{ et } v \} = \max \{ k : \text{il existe } k \text{ chemins indépendants reliant } u \text{ à } v \}.
+$$
+
+\textbf{Exemple Pratique :}
+\textit{Imaginons un réseau de transport où les sommets représentent des villes et les arêtes des routes les reliant. Pour assurer la continuité du trafic entre deux villes importantes \( u \) et \( v \), le théorème de Menger peut être utilisé pour déterminer le nombre minimal de routes qu'il faudrait bloquer pour interrompre le passage, ce qui correspond également au nombre de routes distinctes qu'un voyageur pourrait emprunter pour aller de \( u \) à \( v \) sans repasser par la même ville.}
+
+Cette approche permet non seulement de comprendre la structure sous-jacente d'un réseau mais aussi d'optimiser sa résilience et sa capacité à faire face aux perturbations.

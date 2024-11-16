@@ -1,0 +1,32 @@
+\begin{frame}
+\frametitle{Distance entre les Nœuds}
+
+\begin{tcolorbox}[colback=orange!5,colframe=orange!100!black, title=Distance entre les Nœuds]
+La \textbf{distance entre deux nœuds} \( u \) et \( v \) dans un graphe est définie comme le nombre minimal d'arêtes dans \textbf{le chemin le plus court} les reliant, noté \( d(u, v) \). Cette mesure est importante pour comprendre la structure du graphe et peut être calculée à l'aide d'algorithmes tels que \textbf{Dijkstra} ou \textbf{Floyd-Warshall}.
+
+\[
+d(u, v) = \min_{\substack{p \in \mathcal{P}(u, v)}} |p|
+\]
+
+où \( \mathcal{P}(u, v) \) représente l'ensemble de tous les chemins possibles entre \( u \) et \( v \), et \( |p| \) indique la longueur du chemin \( p \).
+\end{tcolorbox}
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Exemple de Distance entre les Nœuds}
+
+\begin{tcolorbox}[colback=orange!5,colframe=orange!100!black, title=Exemple de Distance entre les Nœuds]
+Considérons un graphe simple \( G \) avec les nœuds \( A, B, C, \) et \( D \). Les arêtes relient les nœuds comme suit : \( A \) à \( B \), \( B \) à \( C \), et \( C \) à \( D \). Il n'y a pas d'arête directe entre \( A \) et \( C \), ni entre \( B \) et \( D \).
+
+La distance entre \( A \) et \( D \) est le nombre minimal d'arêtes dans le chemin le plus court les reliant. Dans ce cas, le chemin le plus court de \( A \) à \( D \) passe par \( B \) et \( C \), avec deux arêtes intermédiaires.
+
+\[
+d(A, D) = \min_{\substack{p \in \mathcal{P}(A, D)}} |p| = |AB| + |BC| + |CD|
+\]
+
+Dans cet exemple, \( d(A, D) = 3 \), ce qui signifie qu'il y a trois arêtes dans le chemin le plus court de \( A \) à \( D \).
+\end{tcolorbox}
+
+\end{frame}

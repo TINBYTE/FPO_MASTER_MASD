@@ -1,0 +1,9 @@
+\section{COROLLAIRE, MENGER (1927)}
+
+Soit $k \geq 2$. Un graphe $G = (V,E)$ est au moins $k$-connexe (pour les sommets) ssi toute paire de sommets distincts de $G$ est connectée par au moins $k$ chemins indépendants.
+
+Si toute paire de sommets est connectée par au moins $k$ chemins indépendants, alors $\kappa(G) \geq k$.
+
+$\Rightarrow$ \textcolor{blue}{P.A.} Supposons $\kappa(G) \geq k$ et qu'il existe \textcolor{red}{2} sommets $u$ et $v$ joints par au plus $k - 1$ chemins indépendants. Par le théorème de Menger : $u$ et $v$ sont adjacents, $e = \{u, v\} \in E$. Dans $G - e$, $u$ et $v$ sont joints par au plus $k - 2$ chemins indépendants. Dans $G - e$, $u$ et $v$ ne sont pas adjacents. Par le théorème de Menger : ils peuvent être séparés, dans $G - e$, par un ensemble $S$ de taille minimale tel que $\#S \leq k - 2$. Puisque $\kappa(G) \geq k$, $\#V > k$. Il existe un sommet $w \notin S \cup \{u, v\}$.
+
+$\Rightarrow$ Dans $(G - e) - S$, il ne peut y avoir simultanément $2$ chemins joignant $w$ respectivement à $u$ et à $v$ car sinon dans $(G - e) - S$ on aurait des chemins joignant $u$ à $w$ et $w$ à $v$, alors $u$ et $v$ ne seraient pas séparés par $S$ ! Supposons qu’aucun chemin ne joint $w$ et $u$ dans $(G - e) - S$. L’ensemble $S \cup \{v\}$ possède (au plus) $k - 1$ éléments et sépare $w$ et $u$ dans $G$. Ceci contredit le fait que $\kappa(G) \geq k$.
