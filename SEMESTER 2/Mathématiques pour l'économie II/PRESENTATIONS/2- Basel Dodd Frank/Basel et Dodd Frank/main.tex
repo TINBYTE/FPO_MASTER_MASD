@@ -1,0 +1,108 @@
+\documentclass[aspectratio=43]{beamer}
+\usetheme{bydevmar}
+%\usefonttheme[onlymath]{serif}
+
+\usepackage{slashed}
+\usepackage{datetime}
+%\usepackage{slidesphysics}
+\graphicspath{{plots/}}
+\usepackage{hyperref}
+\usepackage{cancel}
+% \hypersetup{colorlinks=true, 
+%     linkcolor=blue,          % color of internal links (change box color with linkbordercolor)
+%     citecolor=black,        % color of links to bibliography
+%     filecolor=black,      % color of file links
+%     urlcolor=blue    }
+% \usepackage{deflamb}
+% \usepackage{color, colortbl}
+% \usepackage{tikz}
+%\usepackage{userdef}
+\usepackage[absolute,overlay]{textpos}
+\def\Put(#1,#2)#3{\leavevmode\makebox(0,0){\put(#1,#2){#3}}}
+
+\def\mydate{\leavevmode\hbox{\the\year-\twodigits\month-\twodigits\day}}
+\def\twodigits#1{\ifnum#1<10 0\fi\the#1}
+
+\newcommand\Wider[2][3em]{%
+\makebox[\linewidth][c]{%
+  \begin{minipage}{\dimexpr\textwidth+#1\relax}
+  \raggedright
+  \centering#2
+  \end{minipage}%
+  }%
+}
+
+\def\meetingname{Mathématiques pour l'économie II}
+\def\presenters{Présentateurs:   
+            ABATOUR Driss 
+            \\ \hspace{2.7cm} GAJJA Nour Eddin
+            \\ \hspace{3.2cm} BOUHLALI Abdelfattah }
+\def\supervisor{Encadrent: Z. RAZIKI}
+
+\title[\meetingname]{Bâle et la loi Dodd-Frank}
+%\institute[FPO]{intitute name}
+\institute[FPO]{Faculté Polydisciplinaire de Ouarzazate}
+\date[\mydate]{\meetingname\\\today}
+
+
+
+
+% Define a custom command for section frame
+\newcommand{\sectionframe}[1]{%
+  \begin{frame}
+    \begin{center}
+      \LARGE \insertsectionhead
+    \end{center}
+  \end{frame}
+}
+
+% Add section frame at the beginning of each section
+\AtBeginSection[]{
+  \sectionframe{\thesection.~\insertsection}
+}
+
+
+
+
+\begin{document}
+\begin{frame}[plain,t]
+\titlepage
+\begin{textblock*}{\linewidth}(1cm,6cm) % Adjust the position of the text block as needed
+    \centering
+    \small \presenters \\
+    \small \supervisor
+\end{textblock*}
+\end{frame}
+
+%The next statement creates the title page.
+\begin{frame}
+\frametitle{Contents}
+\tableofcontents
+\end{frame}
+%------------------------------------------------------------
+% -Introduction
+\input{Frames/Introduction/Introduction}
+
+% - Les Accords Basel
+\input{Frames/Les Accords de Bale/Basel}
+
+% - La Loi Dodd Frank
+\input{Frames/La Loi Dodd Frank/Dodd Frank}
+
+% -Conclusion
+\input{Frames/Conclusion/Conclusion}
+
+
+
+
+
+
+%}
+%\setbeamercolor{background canvas}{bg=violet}
+\setbeamercolor{background canvas}{bg=BYDEVMaize}
+\begin{frame}[plain,t]
+\vspace{100pt}
+\centering
+\includegraphics[width=0.6\textwidth]{Assets/fpo_logo.png}
+\end{frame}
+\end{document}
