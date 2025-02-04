@@ -1,0 +1,64 @@
+\subsection{Classes de communication}
+On considère une chaîne de Markov $(X_n)_{n \geq 0}$ définie sur un espace d’états $E$, de matrice de transition $P$.
+
+\begin{definition}[7.1]
+
+\begin{itemize}
+    \item Soient deux états $x$ et $y$. Nous dirons que $x$ conduit à $y$ ou que $y$ est accessible depuis $x$, noté $x \to y$, si :
+    \[
+    \exists n \in \mathbb{N},\ P^{(n)}(x, y) = P[X_n = y \mid X_0 = x] > 0.
+    \]
+    Cette relation signifie que partant de $x$, nous avons une probabilité non nulle d’atteindre $y$ à un certain temps $n$.
+
+    \item Nous dirons que $x$ communique avec $y$, noté $x \leftrightarrow y$, si chacun des états $x$, $y$ est accessible depuis l’autre, c’est-à-dire $x \to y$ et $y \to x$.
+\end{itemize}
+\end{definition}
+
+
+
+\begin{proposition}
+La relation de communication $\leftrightarrow$ est une relation d’équivalence.
+\end{proposition}
+
+\begin{proof}
+\begin{itemize}
+    \item \textbf{Réflexivité}: $x \leftrightarrow x$. Immédiat en observant que 
+    \[
+    P^{(0)}(x, x) = P[X_0 = x \mid X_0 = x] = 1.
+    \]
+
+    \item \textbf{Symétrie}: $x \leftrightarrow y \implies y \leftrightarrow x$. Évident par définition.
+
+    \item \textbf{Transitivité}: $x \leftrightarrow y$ et $y \leftrightarrow z \implies x \leftrightarrow z$. Pour cela, il suffit de montrer la transitivité de la relation d’accessibilité. Supposons que $x \to y$ et $y \to z$. Alors il existe $m, n \in \mathbb{N}$ tels que $P^{(n)}(x, y) > 0$ et $P^{(m)}(y, z) > 0$. Or, d’après les équations de Chapman-Kolmogorov, on a 
+    \[
+    P^{(n+m)}(x, z) = \sum_{y' \in E} P^{(n)}(x, y')P^{(m)}(y', z) \geq P^{(n)}(x, y)P^{(m)}(y, z) > 0.
+    \]
+    La première inégalité provient du fait que tous les termes de la somme sont positifs ou nuls. En conséquence, $x \to z$.
+\end{itemize}
+\end{proof}
+
+
+\begin{definition}[7.3]
+\begin{itemize}
+    \item Les états $E$ de la chaîne peuvent être partitionnés en classes d’équivalence appelées \textbf{classes irréductibles}. Si $E$ est réduit à une seule classe, la chaîne de Markov est dite \textbf{irréductible}.
+
+    \item La relation d’accessibilité s’étend aux classes : une classe d’équivalence $C'$ est accessible depuis une classe $C$, noté $C \to C'$, si 
+    \[
+    \forall (x, x') \in C \times C',\ x \to x'.
+    \]
+    À noter l’équivalence :
+    \[
+    \forall (x, x') \in C \times C',\ x \to x' \iff \exists (x, x') \in C \times C',\ x \to x'.
+    \]
+    La relation d’accessibilité définit une relation d’ordre partiel entre les classes d’équivalence.
+
+    \item Une classe d’équivalence $C$ est dite \textbf{fermée} si, pour tout $x, y$ tels que $(x \in C$ et $x \to y \implies y \in C)$. Autrement dit, $\forall x \in C$, $\forall n \in \mathbb{N}$, 
+    \[
+    \sum_{y \in C} P^{(n)}(x, y) = 1,
+    \]
+    autrement dit encore, $C$ est une classe dont on ne peut pas sortir.
+
+    \item Une classe fermée réduite à un point $C = \{x\}$ est appelée un \textbf{état absorbant}. Un état $x$ est absorbant si et seulement si $p(x, x) = 1$.
+\end{itemize}
+\end{definition}
+

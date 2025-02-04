@@ -1,0 +1,175 @@
+\subsubsection{Critères de récurrence/transience}
+
+Une manière de caractériser la récurrence/transience d’un état est d’utiliser le nombre de visites, notion que nous introduisons maintenant.
+
+\begin{definition}[7.9]
+Le \textbf{nombre de visites} en un état $x$ est la variable aléatoire $N_x$ définie par :
+\[
+N_x = \sum_{n=0}^{\infty} \mathbf{1}_{\{X_n = x\}}.
+\]
+La quantité $G(x, y) := \mathbb{E}_x[N_y]$ est l’espérance du nombre de visites en $y$ partant de $x$. $G$ s’appelle le \textbf{noyau de Green}, le \textbf{noyau potentiel} ou simplement la \textbf{fonction de Green}.
+\end{definition}
+
+\begin{lemme}[7.10]
+Nous avons l’égalité suivante :
+\[
+\forall (x, y) \in E^2, \ G(x, y) = \sum_{n=0}^{\infty} P^{(n)}(x, y).
+\]
+\end{lemme}
+
+\begin{demo}
+Par définition de la fonction de Green :
+\[
+G(x, y) = \mathbb{E}_x[N_y] = \mathbb{E}_x \left[\sum_{n \geq 0} \mathbf{1}_{\{X_n = y\}}\right],
+\]
+(par définition du nombre de visites en $y$)
+\[
+= \sum_{n \geq 0} \mathbb{E}_x\left[\mathbf{1}_{\{X_n = y\}}\right],
+\]
+(par inversion de la sommation et de l’espérance, théorème de Fubini)
+\[
+= \sum_{n \geq 0} P_x[X_n = y],
+\]
+(espérance de l’indicatrice)
+\[
+= \sum_{n \geq 0} P^{(n)}(x, y).
+\]
+\end{demo}
+
+
+%partie noureediine gajja
+\newtheorem{theoreme}{Théorème} 
+\begin{theoreme}[7.11]
+Les conditions suivantes sont équivalentes :
+\begin{enumerate}
+    \item L’état \(x \in E\) est récurrent, c'est-à-dire \(P_x[T_x < \infty] = 1\).
+    \item \(P_x[N_x = \infty] = 1\).
+    \item \(G(x, x) = \infty\).
+\end{enumerate}
+
+De manière analogue, les conditions suivantes sont équivalentes :
+\begin{enumerate}
+    \item L’état \(x \in E\) est transient, c'est-à-dire \(P_x[T_x < \infty] < 1\).
+    \item \(P_x[N_x = \infty] = 0\).
+    \item \(G(x, x) < \infty\) et \(G(x, x) = \frac{1}{P_x[T_x = \infty]}.\)
+\end{enumerate}
+
+Dans ce cas, la loi conditionnelle de \(N_x\) sachant que l’on part de l’état \(x\) est une loi géométrique de paramètre \(P_x[T_x = \infty]\).
+\end{theoreme}
+
+Avant de démontrer le Théorème 7.11, nous prouvons le résultat préliminaire suivant :.
+
+\begin{lemme}[7.12]
+Pour tout \((x, y) \in E^2\),
+\begin{enumerate}
+    \item Pour tout \(n \in \mathbb{N}^*\),
+    \[
+    P_x[N_y \geq n + 1] = P_x[T_y < \infty]P_y[N_y \geq n];
+    \]
+    cette égalité est aussi vraie pour \(n = 0\) si \(x \neq y\).
+
+    \item Pour la fonction de Green,
+    \[
+    G(x, y) = \delta_{\{x=y\}} + P_x[T_y < \infty]G(y, y).
+    \]
+\end{enumerate}
+\end{lemme}
+
+\begin{proof}
+Démontrons la première égalité. Soit \(n \in \mathbb{N}^*\). D’après la formule des probabilités totales :
+\[
+P_x[N_y \geq n + 1] = P_x[N_y \geq n + 1, T_y < \infty] + P_x[N_y \geq n + 1, T_y = \infty].
+\]
+Or, \(P_x[N_y \geq n + 1, T_y = \infty] = 0\), donc :
+\[
+P_x[N_y \geq n + 1] = P_x[N_y \geq n + 1, T_y < \infty].
+\]
+Par la formule des probabilités totales :
+\[
+P_x[N_y \geq n + 1] = \sum_{\ell=1}^\infty P_x[N_y \geq n + 1, T_y = \ell].
+\]
+En utilisant la définition de \(N_y\) :
+\[
+P_x[N_y \geq n + 1, T_y = \ell] = P_x\left[\sum_{k=\ell+1}^\infty \mathds{1}_{\{X_k = y\}} \geq n, T_y = \ell \right].
+\]
+Par les probabilités conditionnelles :
+\[
+P_x\left[\sum_{k=\ell+1}^\infty \mathds{1}_{\{X_k = y\}} \geq n, T_y = \ell \right] = P\left[\sum_{k=\ell+1}^\infty \mathds{1}_{\{X_k = y\}} \geq n \mid T_y = \ell, X_0 = x \right] P_x[T_y = \ell].
+\]
+
+Or, d’après le Corollaire 6.3 :
+\[
+P\left[\sum_{k=\ell+1}^\infty \mathds{1}_{\{X_k = y\}} \geq n \mid T_y = \ell, X_0 = x \right] = P_y[N_y \geq n].
+\]
+Ainsi :
+\[
+P_x[N_y \geq n + 1] = P_y[N_y \geq n] \sum_{\ell=1}^\infty P_x[T_y = \ell].
+\]
+En conclusion :
+\[
+P_x[N_y \geq n + 1] = P_y[N_y \geq n]P_x[T_y < \infty].
+\]
+
+Démontrons maintenant l’égalité pour la fonction de Green. Par définition :
+\[
+G(x, y) = \sum_{n=0}^\infty P^{(n)}(x, y).
+\]
+D’après le Lemme 7.10 :
+\[
+G(x, y) = \delta_{\{x=y\}} + \sum_{n=1}^\infty P^{(n)}(x, y).
+\]
+En utilisant la formule des probabilités totales :
+\[
+P^{(n)}(x, y) = \sum_{\ell=1}^n P_x[X_n = y, T_y = \ell].
+\]
+Par les probabilités conditionnelles :
+\[
+P_x[X_n = y, T_y = \ell] = P[X_n = y \mid T_y = \ell, X_0 = x]P_x[T_y = \ell].
+\]
+D’après le Corollaire 6.3, pour tout \(\ell \in \{1, \dots, n\}\),
+\[
+P[X_n = y \mid T_y = \ell, X_0 = x] = P_y[X_{n-\ell} = y].
+\]
+En remplaçant et en inversant les sommes :
+\[
+G(x, y) = \delta_{\{x=y\}} + \sum_{\ell=1}^\infty P_x[T_y = \ell] \sum_{n=\ell}^\infty P_y[X_{n-\ell} = y].
+\]
+Or :
+\[
+\sum_{n=\ell}^\infty P_y[X_{n-\ell} = y] = G(y, y).
+\]
+Ainsi :
+\[
+G(x, y) = \delta_{\{x=y\}} + P_x[T_y < \infty]G(y, y).
+\]
+\end{proof}
+
+
+
+\textbf{Démonstration du Théorème 7.11.} Puisque \(P_x[N_x \geq 1] = 1\), le Lemme 7.12 et une récurrence immédiate nous disent que, pour tout \(n \in \mathbb{N}^*\),
+\[
+P_x[N_x \geq n] = P_x[T_x < \infty]^{n-1}.
+\]
+La suite d'événements \(\{N_x \geq n\}_{n \geq 1}\) étant décroissante, on a aussi
+\[
+P_x[N_x = \infty] = P_x\left[\bigcap_{n \geq 1} \{N_x \geq n\}\right] = \lim_{n \to \infty} P_x[N_x \geq n] = \lim_{n \to \infty} P_x[T_x < \infty]^{n-1}.
+\]
+Ceci montre l'équivalence entre les points 2 et 1. En effet, on a soit
+\[
+P_x[N_x = \infty] = 1 \Leftrightarrow P_x[T_x < \infty] = 1, \quad \text{ou bien} \quad P_x[N_x = \infty] = 0 \Leftrightarrow P_x[T_x < \infty] < 1.
+\]
+
+Montrons maintenant l'équivalence entre les points 1 et 3. D'après la deuxième égalité du Lemme 7.12, la fonction de Green \(G(x, x)\) satisfait à l'égalité
+\[
+G(x, x)(1 - P_x[T_x < \infty]) = 1.
+\]
+Ainsi,
+\[
+G(x, x) = \frac{1}{1 - P_x[T_x < \infty]} < \infty \Leftrightarrow P_x[T_x < \infty] < 1 \quad \text{ou bien} \quad G(x, x) = \infty \Leftrightarrow P_x[T_x < \infty] = 1.
+\]
+Cela démontre l'équivalence entre le point 1 et le point 3 et termine la preuve des équivalences.
+
+Montrons encore que dans le cas transient, la loi conditionnelle de \(N_x\) sachant \(\{X_0 = x\}\) est géométrique de paramètre \(P_x[T_x = \infty]\). Pour cela, on utilise à nouveau le Lemme 7.12. Pour tout \(n \geq 1\),
+\[
+P_x[N_x = n] = P_x[N_x \geq n] - P_x[N_x \geq n + 1] = P_x[T_x < \infty]^{n-1} (1 - P_x[T_x < \infty]).
+\]

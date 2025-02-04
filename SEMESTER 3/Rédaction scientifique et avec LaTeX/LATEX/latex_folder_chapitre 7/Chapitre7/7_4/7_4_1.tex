@@ -1,0 +1,25 @@
+\subsubsection{Définitions}
+
+\begin{definition}[7.7]
+Soit $x \in E$ un état. Le \textbf{temps d’atteinte} de $x$, noté $T_x$, est le premier instant où $x$ est visité après le départ. Par convention, le temps d’atteinte est infini si nous n’atteignons jamais $x$ :
+\[
+\forall \omega \in \Omega, \ T_x(\omega) =
+\begin{cases}
+\inf\{n > 0 \mid X_n(\omega) = x\}, & \text{si un tel entier existe,} \\
++\infty, & \text{sinon.}
+\end{cases}
+\]
+Si la chaîne part de l’état $x$ lui-même, nous employons plutôt le terme de \textbf{temps de retour}.
+\end{definition}
+
+\begin{definition}[7.8]
+Un état $x \in E$ est dit \textbf{récurrent} si
+\[
+P_x[T_x < +\infty] = 1.
+\]
+L’état $x$ est dit \textbf{transient} ou \textbf{transitoire} sinon, c’est-à-dire quand
+\[
+P_x[T_x < +\infty] < 1, \quad \text{autrement dit } P_x[T_x = +\infty] > 0.
+\]
+Un état est récurrent si nous sommes sûrs d’y revenir. Il est transient s’il existe une probabilité non nulle de ne jamais y revenir, et donc de le quitter définitivement.
+\end{definition}

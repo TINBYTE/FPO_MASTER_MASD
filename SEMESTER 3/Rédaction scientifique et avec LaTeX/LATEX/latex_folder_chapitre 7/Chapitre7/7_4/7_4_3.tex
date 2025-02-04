@@ -1,0 +1,38 @@
+\subsubsection{Classes récurrentes/transientes}
+Nous allons établir que la notion de récurrence/transience est une propriété de classes.
+
+\textbf{Proposition 7.13.} Soient deux états \(x\) et \(y\) qui communiquent, alors \(x\) et \(y\) sont soit tous les deux récurrents soit tous les deux transients.
+
+\textbf{Démonstration.} D’après le Théorème 7.11, il suffit de montrer que \(G(x, x)\) et \(G(y, y)\) sont de même nature (soit finies, soit infinies). D’après le Lemme 7.10, pour tout \(x \in E\), on a \(G(x, x) = \sum_{n=0}^{\infty} P^{(n)}(x, x)\), donc cela revient à montrer que les séries de terme général \(P^{(n)}(x, x)\) et \(P^{(n)}(y, y)\) sont de même nature.
+
+Comme \(x\) et \(y\) communiquent, il existe \(k, \ell\) tels que \(P^{(k)}(x, y) > 0\) et \(P^{(\ell)}(y, x) > 0\). Ainsi, for everything \(n \geq k + \ell\), \[ P^{(n)}(x, x) \geq P^{(k)}(x, y) P^{(n-k-\ell)}(y, y) P^{(\ell)}(y, x) \] and \[ P^{(n)}(y, y) \geq P^{(\ell)}(y, x) P^{(n-k-\ell)}(x, x) P^{(k)}(x, y), \] it is this that shows that the two séries converge and divergent in the same time.
+\textbf{Définition 7.14.} Une classe d’équivalence est dite récurrente, resp. transiente, si un de ses sommets est récurrent, resp. transient.
+
+\textbf{Proposition 7.15.} Une classe récurrente est fermée, autrement dit, la probabilité de sortir d’une classe récurrente est nulle.
+
+\textbf{Démonstration.} Soit \(x\) un état quelconque appartenant à la classe de récurrence \(C\). Supposons qu’il existe \(y \notin C\) tel que \(x \to y\) et montrons que cela conduit à une contradiction. Remarquons d’abord que \(y\) ne conduit à aucun sommet de \(C\), car sinon on aurait \(y \to x\), donc \(x \leftrightarrow y\), et \(y \in C\). De plus, on a :
+\[
+x \to y \iff P_x[T_y < \infty] > 0.
+\]
+Or, la probabilité \(P_x[T_x = \infty]\) de ne pas revenir en \(x\) est bornée inférieurement par la probabilité d’aller en \(y\) en temps fini (puisque \(y\) ne conduit à aucun état de \(C\)). Ainsi,
+\[
+P_x[T_x = \infty] \geq P_x[T_y < \infty] > 0,
+\]
+ce qui donne \(P_x[T_x < \infty] < 1\), ce qui est une contradiction avec le fait que \(x\) est récurrent. 
+Nous voyons qu’une classe récurrente est fermée, mais la réciproque est fausse en général (voir l’exemple de la marche aléatoire non-symétrique, Exercice 7.7, qui est fermée et transiente), bien que cette réciproque soit vérifiée si cette classe est de cardinal fini.
+
+\textbf{Proposition 7.16.} Toute classe fermée et de cardinal fini est récurrente.
+
+\textbf{Démonstration.} Soit \(C\) cette classe fermée, et soit \(x \in C\), alors,
+\[
+\sum_{y \in C} G(x, y) = \sum_{y \in C} \sum_{n \geq 0} P^{(n)}(x, y) = \sum_{n \geq 0} \sum_{y \in C} P^{(n)}(x, y) = \infty,
+\]
+car pour tout \(n \in \mathbb{N}\),
+\[
+\sum_{y \in C} P^{(n)}(x, y) = P_x[X_n \in C] = 1 ; \text{ puisque la classe } C \text{ est fermée, nous ne la quittons pas.}
+\]
+Supposons que pour tout \(y \in C\), \(y\) soit transient. Alors d’après l’Exercice 7.5, \(G(x, y) < \infty\). Par hypothèse, la classe \(C\) est de cardinal fini, ce qui implique que \(\sum_{y \in C} G(x, y) < \infty\), et cela donne une contradiction. En conséquence, il existe un état \(y \in C\) récurrent et la classe \(C\) est donc récurrente.
+
+\textbf{Corollaire 7.17.} Une chaîne de Markov définie sur un espace d’états fini admet au moins un état récurrent.
+
+\textbf{Démonstration.} Ceci découle du fait que si l’espace d’état est fini, il doit y avoir au moins une classe fermée.

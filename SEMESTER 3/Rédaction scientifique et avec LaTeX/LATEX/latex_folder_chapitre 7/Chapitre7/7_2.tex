@@ -1,0 +1,31 @@
+\subsection{Période}
+Dans cette partie, nous étudions la période associée à une classe.
+
+\begin{definition}[7.4]
+Étant donné un état $x \in E$, la période de l’état $x$, notée $d(x)$, est le plus grand commun diviseur des entiers $n$ tels que $P^{(n)}(x, x)$ est strictement positif :
+\[
+d(x) = \mathrm{PGCD}\{n \geq 1 \mid P^{(n)}(x, x) > 0\}.
+\]
+Par convention, $d(x) = 0$ si l’ensemble des $n \geq 1$ tels que $P^{(n)}(x, x) > 0$ est vide.
+\end{definition}
+
+\begin{theorem}[7.5]
+Si deux états communiquent, alors ils ont la même période.
+\end{theorem}
+
+\begin{proof}
+Soient $x$ et $y$ deux états qui communiquent, $x \leftrightarrow y$. Montrons que $d(y)$ divise $d(x)$. Ceci revient à prouver que $d(y)$ divise tout $n \geq 1$ tel que $P^{(n)}(x, x) > 0$ ; soit donc un tel $n$. Comme $x$ et $y$ communiquent, il existe deux entiers $k, \ell \geq 1$ tels que $P^{(k)}(x, y) > 0$ et $P^{(\ell)}(y, x) > 0$. De plus, d’après les équations de Chapman-Kolmogorov :
+\[
+P^{(n+k+\ell)}(y, y) \geq P^{(\ell)}(y, x)P^{(n)}(x, x)P^{(k)}(x, y) > 0, 
+\]
+et 
+\[
+P^{(k+\ell)}(y, y) \geq P^{(\ell)}(y, x)P^{(k)}(x, y) > 0.
+\]
+Ainsi, $d(y)$ divise $n + k + \ell$ et $k + \ell$ ; et par suite, divise la différence $n$. On a donc montré que $d(y)$ divise $d(x)$. En intervertissant les rôles de $x$ et $y$, nous prouvons que $d(x)$ divise $d(y)$, ce qui entraîne que $d(x) = d(y)$.
+\end{proof}
+
+\begin{definition}[7.6]
+La période d’une classe est la période de chacun de ses éléments. Une classe est dite \textbf{apériodique} si sa période est 1.
+\end{definition}
+
